@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: rgb(245, 245, 245);
+}
+
+.heading{
+    border-bottom: 2px solid #ff0000;
+    background-color: #2c2c2c;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    color: white;
+}
+
+.bookCard{
+    background-color: #ffffff;
+    width: 200px;
+    height: 150px;
+}
+
+.addbook{
+    padding: 6px 12px;
+    font-weight: 600;
+    background-color: transparent;
+    border-radius: 4px;
+    border:2px solid #ff0000;
+    font-size: 16px;
+   
+}
+
+.addBook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+.library{
+    background-color: #ffe4e4;
+}
+
+#dialogPop{
+    box-shadow: 0 4px 20px #0000001a;
+    backdrop-filter: blur(2px);
+    height: 60%;
+    position: absolute;
+    right: 0;
+    padding: 36px;
+    border: 0;
+    background-color: #f0f0f0;
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    display: block;
+    margin-bottom: 16px;
+    height: 24px;
+    padding: 16px;
+    background-color: white;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns button {
+    padding: 6px 12px;
+    border: 0;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 12px;
+    border-radius: 4px;
+}
+
+#submitBtn{
+    background-color: #00a732;
+}
+
+#cancelBtn{
+    background-color: #ff0000;
+}
+
+
+footer{
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #ff0000;
+}
