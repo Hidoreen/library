@@ -90,18 +90,3 @@ formBook.addEventListener('submit', (event)=> {
     dialogPop.close();
 
 })
-
-//add new book 
-// function addBook(){
-//     const title = prompt('Enter the title of the book:');
-//     const author = prompt('Enter the author of the book:');
-//     const pages = parseInt(prompt('Enter the number of pages:'));
-//     const readStatus = prompt('Enter the read status of the book:');
-
-//     const newBook = new Book(title, author, pages, readStatus);
-//         myLibrary.push(newBook);
-
-//         getBooks(myLibrary);
-// }
-
-// addBook();
