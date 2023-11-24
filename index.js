@@ -2,7 +2,6 @@
 
 const myLibrary = [
     new Book('Atomic Habits', 'James Clear', 300, 'unread'),
-    new Book('The Power of Silence', 'Carlos Castaneda', 250, 'read')
 ];
 
 function Book (title, author, pages, readStatus){
@@ -19,11 +18,12 @@ function Book (title, author, pages, readStatus){
 
 //loop through the book array and display books
 function getBooks(arr){
+    const library = document.querySelector('.library');
+    library.innerHTML = '';
 
     arr.forEach(book => {
-        const library = document.querySelector('.library');
+       
         const bookcard = document.createElement('div');
-
         bookcard.className = 'bookCard';
 
         const title = document.createElement('h3');
@@ -38,6 +38,15 @@ function getBooks(arr){
         const readStatus = document.createElement('p');
         readStatus.textContent = ` readStatus: ${book.readStatus}`;
 
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'removeBtn';
+        removeBtn.textContent = 'Remove Book';
+        removeBtn.addEventListener('click', () => {
+        library.removeChild(bookcard);
+
+        });
+
+
         bookcard.appendChild(title);
         bookcard.appendChild(authorName);
         bookcard.appendChild(pages);
@@ -45,24 +54,15 @@ function getBooks(arr){
         bookcard.appendChild(removeBtn);
         
         library.appendChild(bookcard);
-
-        const removeBtn = document.createElement('button');
-        removeBtn.className = 'removeBtn';
-        removeBtn.textContent = 'Remove Book';
-        removeBtn.addEventListener('click', () => {
-     
-        myLibrary.splice(index, 1);
-        
-        library.removeChild(bookcard);
-        });
-
         
     });
 }
 
+getBooks(myLibrary);
+
 //add and print a book through dialog element
-const showDialog = document.querySelector('.addbook');
-const submitBtn = document.getElementById('submitBtn');
+const showDialog = document.querySelector('.addbookBtn');
+const formBook = document.getElementById('formBook');
 const dialogPop = document.getElementById('dialogPop');
 const cancel = document.getElementById('cancelBtn');
 
@@ -75,7 +75,8 @@ cancel.addEventListener('click', ()=>{
 })
 
 
-submitBtn.addEventListener('click', ()=> {
+formBook.addEventListener('submit', (event)=> {
+    event.preventDefault();
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const pages = parseInt(document.getElementById('pages').value);
@@ -89,6 +90,7 @@ submitBtn.addEventListener('click', ()=> {
     dialogPop.close();
 
 })
+
 //add new book 
 // function addBook(){
 //     const title = prompt('Enter the title of the book:');
